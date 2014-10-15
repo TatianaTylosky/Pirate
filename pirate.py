@@ -39,4 +39,8 @@ response = ask()
 print "I'll make that right up for you!"
 print "..."
 make_drink(response)
-print "Voila!"
+
+if 'y' not in response.values():
+    print "Just straight rum for you then!"
+else:
+    print "Voila!"
