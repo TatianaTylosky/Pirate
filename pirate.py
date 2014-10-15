@@ -18,6 +18,7 @@ ingredients = {
 }
 
 def ask():
+    print "Argsome!"
     response = {}
     for key in questions:
         response[key] = raw_input(questions[key] + " (y/n)")
@@ -28,13 +29,13 @@ def make_drink(response):
         if response[key] == "y":
             print("just a " + random.choice(ingredients[key]))
 
-ready = raw_input('Are you ready to make your pirate drink? (y/n) ')
-while ready != 'y':
-    ready = raw_input('Are you ready to make your pirate drink? (y/n) ')
-    print "Argsome!"
-else:
-    response = ask()
+def ready():
+    return raw_input('Are you ready to make your pirate drink? (y/n) ')
 
+while ready() != 'y':
+    print("How sad!")
+
+response = ask()
 print "I'll make that right up for you!"
 print "..."
 make_drink(response)
